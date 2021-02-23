@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import styled from 'styled-components/macro'
 import List from './List'
 
 const data = [
@@ -19,17 +19,27 @@ export default function App() {
   }
 
   return (
-    <div className="App">
-      <h1 className="App__header">
+    <AppGrid>
+      <Heading>
         Let's talk about{' '}
         <a href="https://styled-components.com">styled-components</a>!
-      </h1>
+      </Heading>
       <List data={data} onClick={handleClick} selected={selected} />
       <h2>Let's create some more components!</h2>
       <ol>
         <li>Button</li>
         <li>PasswordInput</li>
       </ol>
-    </div>
+    </AppGrid>
   )
 }
+
+const AppGrid = styled.div`
+  display: grid;
+  grid-gap: 20px;
+  padding: 8px;
+  background-color: skyblue;
+`
+const Heading = styled.h1`
+  margin: 0;
+`
