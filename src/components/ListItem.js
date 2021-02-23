@@ -1,15 +1,27 @@
-import './ListItem.css'
+import styled from 'styled-components/macro'
 
 export default function ListItem({ text, onClick, isSelected }) {
   return (
-    <li
+    <Item
       onClick={onClick}
-      className="List__item"
       style={{
         textDecoration: `${isSelected && 'line-through'}`,
       }}
     >
       {text}
-    </li>
+      <span>Hello</span>
+    </Item>
   )
 }
+
+const Item = styled.li`
+  color: white;
+
+  &::marker {
+    content: '🐲';
+  }
+
+  span {
+    color: hotpink;
+  }
+`
