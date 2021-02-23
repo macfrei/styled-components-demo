@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
+import Button from './Button'
 import List from './List'
+import PasswordInput from './PasswordInput'
 
 const data = [
   'Syntax & components',
@@ -26,6 +28,9 @@ export default function App() {
       </Heading>
       <List data={data} onClick={handleClick} selected={selected} />
       <h2>Let's create some more components!</h2>
+      <Button bgColor="hotpink">My Button!</Button>
+      <RedButton>Red Button!</RedButton>
+      <PasswordInput />
       <ol>
         <li>Button</li>
         <li>PasswordInput</li>
@@ -33,6 +38,11 @@ export default function App() {
     </AppGrid>
   )
 }
+
+const RedButton = styled(Button)`
+  color: white;
+  background-color: red;
+`
 
 const AppGrid = styled.div`
   display: grid;
