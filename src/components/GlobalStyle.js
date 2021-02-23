@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
 }
@@ -13,3 +16,6 @@ button {
   font-size: inherit;
   padding: 5px;
 }
+`
+
+export default GlobalStyle
